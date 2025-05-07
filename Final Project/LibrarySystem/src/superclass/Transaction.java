@@ -1,13 +1,16 @@
 package superclass;
+import java.time.LocalDateTime;
 
 public abstract class Transaction extends Entity {
     private Users user;
     private Media media;
-    private String dateTransaction;
+    private LocalDateTime dateTransaction;
 
-    public Transaction(int id, Users user, Media media, String dateTransaction){
+    public Transaction(int id, Users user, Media media, LocalDateTime dateTransaction){
         super(id);
-        this.user = user;
+        if (user == null || media == null) {
+            throw new IllegalArgumentException("User  and Media cannot be null");
+        }
         this.media = media;
         this.dateTransaction = dateTransaction;
     }
@@ -17,13 +20,14 @@ public abstract class Transaction extends Entity {
     public Media getMedia() {
         return media;
     }
-    public String getDateTransaction() {
+    public LocalDateTime getDateTransaction() {
         return dateTransaction;
     }
 
     public abstract void execute();
 }
-class lending extends Transaction{
+//other class
+class Lending extends Transaction{
     public lending (int id, Users user, Media media, String dateTransaction){
         super(id, user, media, dateTransaction);
     }
@@ -34,7 +38,7 @@ class lending extends Transaction{
     }
 }
 
-class returner extends Transaction{
+class Returner extends Transaction{
     public returner(int id, Users user, Media media, String dateTransaction){
         super(id, user, media, dateTransaction);
     }
