@@ -3,15 +3,39 @@ import superclass.*;
 
 public class Books extends Media {
     private String writer;
-    private int numberOfPages;
+    private String contenType;
+    
+    public static final String[] VALID_CONTEN_TYPES = {"Fiksi", "Non-Fiksi", "Komik", "Sastra", "Ensiklopedia"};
 
-    public Books(int id, String title, boolean available, String writer, int numberOfPages){
+    public Books(int id, String title, boolean available, String writer,String contenType){
         super(id, title, available);
         this.writer = writer;
-        this.numberOfPages = numberOfPages;
+        if (contenType == null || !isValidContenType(contenType)) {
+            throw new IllegalArgumentException("Tipe konten ivalid.");
+        }        
+        this.contenType = contenType;
+    }
+    public boolean isValidContenType(String contentype){
+        for (String validtype : VALID_CONTEN_TYPES){
+            if (validtype.equalsIgnoreCase(contentype)){
+                return true;
+            }
+        }
+        return false;
     }
     @Override
     public void info() {
-        System.out.println("Buku: " + getTitle() + "\nPenulis: " + writer + "\nHalaman: "+ numberOfPages);
+        System.out.println("Buku: " + getTitle() + "\nPenulis: " + writer + "\nTipe: "+ contenType);
+    }
+
+    @Override
+    public String toString() {
+        return "Books{" +
+                "id=" + getId() +
+                ", title='" + getTitle() + '\'' +
+                ", available=" + isAvailable() +
+                ", writer='" + writer + '\'' +
+                ", contenType='" + contenType + '\'' +
+                '}';
     }
 }
