@@ -55,6 +55,5 @@ public abstract class Users extends Entity implements Authen{
     public String toString() {
         return "ID: " + getId() + ", Nama: " + name + ", Tipe Akun: " + typeAccount;
     }
-
     public abstract void info();
 }

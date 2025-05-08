@@ -21,7 +21,6 @@ public class Magazine extends Media{
             ", edisi='" + edisi + '\'' +
             '}';
 }
-
     @Override
     public void info() {
         System.out.println("Majalah: "+ getTitle() + "\nedisi: "+ edition);

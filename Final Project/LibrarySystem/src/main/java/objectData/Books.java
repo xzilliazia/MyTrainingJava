@@ -23,6 +23,7 @@ public class Books extends Media {
         }
         return false;
     }
+    
     @Override
     public void info() {
         System.out.println("Buku: " + getTitle() + "\nPenulis: " + writer + "\nTipe: "+ contenType);

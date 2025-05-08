@@ -39,6 +39,5 @@ public abstract class Media extends Entity {
             ", genre='" + genre + '\'' +
             '}';
     }
-
     public abstract void info();
 }
