@@ -1,4 +1,5 @@
 package masterClass;
+import actions.*;
 
 public abstract class Users extends Entity implements Authen{
     private String name;
@@ -6,7 +7,7 @@ public abstract class Users extends Entity implements Authen{
     private String password;
     private AccountType typeAccount;
 
-    public Users(int id, String name, String username, String password, String typeAccount){
+    public Users(int id, String name, String username, String password, AccountType typeAccount){
         super(id);
         this.name = name;
         this.username = username;
@@ -23,7 +24,7 @@ public abstract class Users extends Entity implements Authen{
     public String getPassword() {
         return password;
     }
-    public String getTypeAccount() {
+    public AccountType getTypeAccount() {
         return typeAccount;
     }
 

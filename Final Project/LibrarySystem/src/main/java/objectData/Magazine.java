@@ -5,9 +5,9 @@ import masterClass.*;
 public class Magazine extends Media{
     private String edition; 
 
-    public Magazine(int id, String title, boolean available, String edition){
-        super(id, title, available);
-        if (edisi == null || edisi.trim().isEmpty()) {
+    public Magazine(int id, String title,String genre, boolean available, String edition){
+        super(id, title, genre, available);
+        if (edition == null || edition.trim().isEmpty()) {
             throw new IllegalArgumentException("Edisi tidak boleh kosong");
         }
         this.edition = edition;
@@ -18,7 +18,7 @@ public class Magazine extends Media{
             "id=" + getId() +
             ", title='" + getTitle() + '\'' +
             ", available=" + isAvailable() +
-            ", edisi='" + edisi + '\'' +
+            ", edisi='" + edition + '\'' +
             '}';
 }
     @Override

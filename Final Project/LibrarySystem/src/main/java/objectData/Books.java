@@ -7,8 +7,8 @@ public class Books extends Media {
     
     public static final String[] VALID_CONTEN_TYPES = {"Fiksi", "Non-Fiksi", "Komik", "Sastra", "Ensiklopedia"};
 
-    public Books(int id, String title, boolean available, String writer,String contenType){
-        super(id, title, available);
+    public Books(int id, String title,String genre, boolean available, String writer, String contenType){
+        super(id, title, genre, available);
         this.writer = writer;
         if (contenType == null || !isValidContenType(contenType)) {
             throw new IllegalArgumentException("Tipe konten ivalid.");

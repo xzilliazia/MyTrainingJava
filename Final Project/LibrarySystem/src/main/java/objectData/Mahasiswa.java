@@ -4,8 +4,8 @@ import masterClass.*;
 public class Mahasiswa extends Users{
     private String major;
 
-    public Mahasiswa(int id, String name, String username, String password, String major){
-        super(id, name, username, password, major);
+    public Mahasiswa(int id, String name, String username, String password, AccountType typeAccount, String major){
+        super(id, name, username, password, typeAccount);
         this.major = major;
     }
 

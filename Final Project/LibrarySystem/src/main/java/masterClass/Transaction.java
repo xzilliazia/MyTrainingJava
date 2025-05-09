@@ -28,7 +28,7 @@ public abstract class Transaction extends Entity {
 }
 //other class
 class Lending extends Transaction{
-    public lending (int id, Users user, Media media, String dateTransaction){
+    public Lending (int id, Users user, Media media, LocalDateTime dateTransaction){
         super(id, user, media, dateTransaction);
     }
     @Override
@@ -39,7 +39,7 @@ class Lending extends Transaction{
 }
 
 class Returner extends Transaction{
-    public returner(int id, Users user, Media media, String dateTransaction){
+    public Returner(int id, Users user, Media media, LocalDateTime dateTransaction){
         super(id, user, media, dateTransaction);
     }
     @Override
